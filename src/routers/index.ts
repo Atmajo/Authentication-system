@@ -7,6 +7,10 @@ import { join } from "path";
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
+  res.send("Express + TypeScript Server is running");
+});
+
+router.get("/ping", (req: Request, res: Response) => {
   res.json({
     data: req.headers,
   });

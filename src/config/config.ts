@@ -5,4 +5,5 @@ export const config = {
   port: process.env.PORT ? process.env.PORT : 3000,
   jwtsecret: process.env.JWT_SECRET!,
   url: process.env.URL ? process.env.URL : "http://localhost:3000",
+  cronjob: process.env.NODE_ENV === "dev" ? "* * * * *" : "*/5 * * * *",
 };
