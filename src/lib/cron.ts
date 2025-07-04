@@ -12,9 +12,9 @@ const schedulePing = schedule(config.cronjob, async () => {
     if (!response.ok) {
       throw new Error(`Ping failed with status: ${response.status}`);
     }
-
+    
     const data = await response.json();
-    console.log("Ping response data:", data.data);
+    console.log("Ping response data:", data);
   } catch (error) {
     logger.error("Cron job failed", {
       error: error instanceof Error ? error.message : String(error),
