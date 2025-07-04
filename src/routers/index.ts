@@ -3,11 +3,12 @@ import { verifyToken } from "../middlewares/token";
 import logger from "@/logger/logger";
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import { getClientIp } from "request-ip"
 
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
-  const ip = req.header('X-Real-IP') || req.connection.remoteAddress;
+  const ip = getClientIp(req)
   logger.info(ip);
   res.send("Express + TypeScript Server is running");
 });
