@@ -14,7 +14,7 @@ const schedulePing = schedule(config.cronjob, async () => {
     }
     
     const data = await response.json();
-    console.log("Ping response data:", data);
+    console.log("Ping response data:", data.data);
   } catch (error) {
     logger.error("Cron job failed", {
       error: error instanceof Error ? error.message : String(error),

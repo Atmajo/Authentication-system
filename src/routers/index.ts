@@ -12,7 +12,7 @@ router.get("/", (req: Request, res: Response) => {
 });
 
 router.get("/ping", (req: Request, res: Response) => {
-  res.send("pong");
+  res.json({ data: "pong" });
 });
 
 router.get("/logs", (req: Request, res: Response) => {
