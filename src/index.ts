@@ -9,6 +9,7 @@ import schedulePing from '@/lib/cron';
 const app: Express = express();
 const port = config.port;
 
+app.set('trust proxy', true);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
