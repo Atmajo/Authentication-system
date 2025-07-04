@@ -7,6 +7,7 @@ import { join } from "path";
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
+  logger.info(req.ip);
   res.send("Express + TypeScript Server is running");
 });
 
